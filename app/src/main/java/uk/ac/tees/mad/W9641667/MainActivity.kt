@@ -1,46 +1,45 @@
 package uk.ac.tees.mad.W9641667
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import uk.ac.tees.mad.W9641667.ui.theme.GymTheme
+import android.os.Handler
+import android.text.Layout
+import android.view.View
+import android.widget.Button
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private var authenticationFirebase: FirebaseAuth = Firebase.auth;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            GymTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        findViewById<View>(R.id.cardCalorieCounter).setOnClickListener{
+            startActivity(Intent(this,CaloriesCounter::class.java))
+        }
+
+        findViewById<Button>(R.id.button_signout).setOnClickListener{
+            authenticationFirebase.signOut();
+            startActivity(Intent(this,Login::class.java))
+        }
+
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val currentUser = authenticationFirebase.currentUser
+        if (currentUser==null)
+        {
+            startActivity(Intent(this,Login::class.java))
+            finish()
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    GymTheme {
-        Greeting("Android")
-    }
 }

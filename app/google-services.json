@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "942393534633",
+    "project_id": "befit-aeeea",
+    "storage_bucket": "befit-aeeea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942393534633:android:80dccb9cf1ba9eedc1e1b8",
+        "android_client_info": {
+          "package_name": "uk.ac.tees.mad.W9641667"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD5kPqQ_qqz3WN1tYO7qimBOfGmexGYOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

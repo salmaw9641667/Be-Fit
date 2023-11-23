@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistationsActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/reg_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="144dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/reg_welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reg_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/welcome_to_be_fit"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/logo_colour" />
+
+    <EditText
+        android:id="@+id/reg_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reg_welcomeText"
+        android:layout_marginTop="30dp"
+        android:hint="Name"
+        android:textStyle="bold"
+        android:inputType="textPersonName"
+        android:textColor="@color/logo_colour"
+        android:padding="12dp"
+        android:background="@color/background" />
+
+    <EditText
+        android:id="@+id/reg_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reg_name"
+        android:layout_marginTop="16dp"
+        android:hint="Mobile Number"
+        android:textStyle="bold"
+        android:inputType="phone"
+        android:textColor="@color/logo_colour"
+        android:padding="12dp"
+        android:background="@color/background" />
+
+    <EditText
+        android:id="@+id/reg_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reg_mobile"
+        android:layout_marginTop="16dp"
+        android:hint="Username"
+        android:textStyle="bold"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/logo_colour"
+        android:padding="12dp"
+        android:background="@color/background" />
+
+    <EditText
+        android:id="@+id/reg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reg_username"
+        android:layout_marginTop="16dp"
+        android:hint="Password"
+        android:textStyle="bold"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="@color/logo_colour"
+        android:background="@color/background" />
+
+    <Button
+        android:id="@+id/reg_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reg_password"
+        android:layout_marginTop="24dp"
+        android:background="@color/logo_colour"
+        android:text="Register"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/reg_loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reg_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Already have an account? Login"
+        android:textColor="@color/logo_colour"
+        android:textSize="16sp" />
+</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

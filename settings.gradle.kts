@@ -13,6 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "gym"
+rootProject.name = "BE-Fit"
 include(":app")
- 

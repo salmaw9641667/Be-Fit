@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">gym</string>
+    <string name="app_name">BE-Fit</string>
+    <string name="welcome_to_be_fit">Welcome to Be Fit</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="workout_plans">Workout Plans</string>
 </resources>
