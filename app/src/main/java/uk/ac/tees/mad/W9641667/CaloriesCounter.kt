@@ -47,8 +47,6 @@ class CaloriesCounter : AppCompatActivity() {
                     val gson = Gson()
                     val type = object : TypeToken<List<FoodItem>>() {}.type
                     val foodItems: List<FoodItem> = gson.fromJson(dishesArray.toString(), type)
-
-                    // Populate ListView with these items
                     val adapter = FoodItemAdapter(foodItems)
                     resultsListView.adapter = adapter
 
