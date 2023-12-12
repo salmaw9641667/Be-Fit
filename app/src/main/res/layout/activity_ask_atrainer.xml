@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ask A Trainer"
+        android:padding="30dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:background="@color/logo_colour"
+        />
+
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:padding="15dp"
+        android:entries="@array/category_options"/>
+
+    <EditText
+        android:id="@+id/problemInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:hint="Describe your problem or goal"/>
+
+    <Button
+        android:id="@+id/uploadImageButton"
+        android:layout_margin="15px"
+        android:background="@color/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload Image"/>
+
+    <ImageView
+        android:id="@+id/selectedImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/askButton"
+        android:layout_margin="15px"
+        android:textColor="@color/white"
+        android:background="@color/logo_colour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ask Trainer"/>
+
+</LinearLayout>
