@@ -64,7 +64,7 @@ class AskATrainer : AppCompatActivity() {
         val problemDescription = problemInput.text.toString()
 
         if (selectedImageUri != null && problemDescription.isNotBlank()) {
-            // Upload image to Firebase Storage
+
             val imageRef = FirebaseStorage.getInstance().reference.child("images/${selectedImageUri!!.lastPathSegment}")
             val uploadTask = imageRef.putFile(selectedImageUri!!)
 
@@ -72,7 +72,7 @@ class AskATrainer : AppCompatActivity() {
                 imageRef.downloadUrl.addOnSuccessListener { uri ->
                     val imageUrl = uri.toString()
 
-                    // Save data to Firebase Realtime Database
+
                     val dataToSave = mapOf(
                         "category" to selectedCategory,
                         "problem" to problemDescription,
@@ -84,18 +84,18 @@ class AskATrainer : AppCompatActivity() {
                     requestId?.let {
                         databaseRef.child(it).setValue(dataToSave)
                             .addOnSuccessListener {
-                                Toast.makeText(this, "Data submitted successfully", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Data submitted", Toast.LENGTH_SHORT).show()
                            finish()
                             }
                             .addOnFailureListener {
 
-                                Toast.makeText(this, "Error: ${it.message}", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
                             }
                     }
                 }
             }.addOnFailureListener {
 
-                Toast.makeText(this, "Image upload failed: ${it.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "upload failed", Toast.LENGTH_SHORT).show()
             }
         } else {
 

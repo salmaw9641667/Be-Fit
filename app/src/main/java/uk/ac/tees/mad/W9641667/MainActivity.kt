@@ -14,11 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import java.util.concurrent.Executor
 
-
-
-
-
-
 class MainActivity : AppCompatActivity() {
 
     private var authenticationFirebase: FirebaseAuth = Firebase.auth;
@@ -71,10 +66,7 @@ class MainActivity : AppCompatActivity() {
         val executor: Executor = ContextCompat.getMainExecutor(this)
 
         bP = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
-            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
-                super.onAuthenticationError(errorCode, errString)
-                authenticationFirebase.signOut()
-            }
+
 
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                 super.onAuthenticationSucceeded(result)

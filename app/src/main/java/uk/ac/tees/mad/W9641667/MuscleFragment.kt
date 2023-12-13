@@ -55,7 +55,7 @@ class MuscleFragment(private val muscle: String) : Fragment() {
 
             override fun getHeaders(): Map<String, String> {
                 val headers = HashMap<String, String>()
-                headers["X-RapidAPI-Key"] = "f6d96b246cmsh9f60d5199ed066dp178283jsn2441bcb10c02"
+                headers["X-RapidAPI-Key"] = "d1fe910fd7msh526a88b9ac59227p1672adjsncdc55da13174"
                 headers["X-RapidAPI-Host"] = "exercises-by-api-ninjas.p.rapidapi.com"
                 return headers
             }

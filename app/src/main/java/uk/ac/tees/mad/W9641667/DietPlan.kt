@@ -44,7 +44,7 @@ class DietPlan : AppCompatActivity() {
     }
 
     private fun loadRecipes(minCalories: String, maxCalories: String) {
-        val url = "https://api.spoonacular.com/recipes/findByNutrients?minCalories=$minCalories&maxCalories=$maxCalories&number=10&apiKey=b9be65b94d994b5fa702cf79bcc6bfa7"
+        val url = "https://api.spoonacular.com/recipes/findByNutrients?minCalories=$minCalories&maxCalories=$maxCalories&number=10&apiKey=bdae94786db04d0ca4abec4a2e25f14c"
         val requestQueue = Volley.newRequestQueue(this)
 
         val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null, { response ->

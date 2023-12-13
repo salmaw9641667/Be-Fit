@@ -70,6 +70,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val intent = Intent(this, Login::class.java)
+
                     intent.putExtra("registration_success", "Registration successful. Please log in.")
                     startActivity(intent)
                     finish()

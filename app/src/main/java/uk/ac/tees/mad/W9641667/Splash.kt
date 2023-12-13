@@ -1,5 +1,6 @@
 package uk.ac.tees.mad.W9641667
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,10 +17,19 @@ class Splash : AppCompatActivity() {
         val logoImageView = findViewById<ImageView>(R.id.splashImage)
         logoImageView.startAnimation(logoAnimation)
 
-        // Handler to start the MainActivity and close this Splash-Screen after 2 seconds.
+
         Handler().postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            if(isFirstOpen(applicationContext)) {
+                startActivity(Intent(this,Welcome::class.java))
+            }else{
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
         }, 2500)
+    }
+
+    fun isFirstOpen(context: Context): Boolean {
+        val sharedPreferences = context.getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("isFirstOpen", true)
     }
 }
